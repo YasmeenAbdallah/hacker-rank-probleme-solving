@@ -130,7 +130,28 @@ namespace hacker_rank_probleme_solving
         }
 
 
+        /*
+     * Complete the 'miniMaxSum' function below.
+     *
+     * The function accepts INTEGER_ARRAY arr as parameter.
+     */
 
+        public static void miniMaxSum(List<int> arr)
+        {
+            if (arr.Count == 5)
+            {
+                List<long> re= arr.Select(i => (long)i).ToList();
+                re.Sort();
+                long min = re.GetRange(0, 4).Sum();
+                long max = re.GetRange(1, 4).Sum();
+                Console.Write(min +" ");
+                Console.WriteLine(max);
+            }
+            else
+            {
+                Console.WriteLine("error");
+            }
+        }
         static void Main(string[] args)
         {
             /* this for compare triple fun
@@ -158,7 +179,9 @@ namespace hacker_rank_probleme_solving
             // Console.WriteLine(result);
             // List<int> plus = new List<int>() {1,1,0,-1,-1 };
             //  plusMinus(plus);
-            staircase(6);
+            // staircase(6);
+            List<int>Value = new List<int>() { 426980153, 354802167, 142980735, 968217435, 734892650 };
+            miniMaxSum(Value);
         }
     }
 }
