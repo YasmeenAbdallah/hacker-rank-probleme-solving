@@ -152,9 +152,43 @@ namespace hacker_rank_probleme_solving
                 Console.WriteLine("error");
             }
         }
+
+
+
+    /*
+     * Complete the 'birthdayCakeCandles' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts INTEGER_ARRAY candles as parameter.
+     */
+
+        public static int birthdayCakeCandles(List<int> candles)
+        {
+
+            int counter = 1;
+            int max = candles[0];
+            for (int i = 1; i < candles.Count; i++)
+            {
+                if (candles[i]>max)
+                {
+                    max = candles[i];
+                    counter = 1;
+                }
+                else if (candles[i]==max)
+                {
+                    counter++;
+                }
+            }
+          //  int Result = candles.Count(x => x == candles.Max());
+            // Console.WriteLine(candles.Count(x =>));
+            return counter;
+        }
+            
+        
+
         static void Main(string[] args)
         {
-            /* this for compare triple fun
+            /*********************************************************
             List<int> a = new List<int>(){ 5, 10, 7 };
             List<int> b = new List<int>() { 3, 6, 10 };
             List<int> result = compareTriplets(a, b);
@@ -163,6 +197,9 @@ namespace hacker_rank_probleme_solving
                 Console.WriteLine(item);
             }
             */
+
+
+            /*************************************************************
             List<int> rowValue = new List<int>();
             List<List<int>> matrix = new();
             rowValue = new List<int>() { 11, 2, 4 } ;
@@ -172,16 +209,32 @@ namespace hacker_rank_probleme_solving
             rowValue = new List<int>() { 10, 8, -12 };
             matrix.Add(rowValue);
             //  int result=diagonalDifference(matrix);
-            //  Console.WriteLine(result);
-            //  List<long> longSum = new List<long>() { 1000000001, 1000000002, 1000000003, 1000000004, 1000000005 };
+            //  Console.WriteLine(result);*/
 
-            // long result = aVeryBigSum(longSum);
-            // Console.WriteLine(result);
-            // List<int> plus = new List<int>() {1,1,0,-1,-1 };
-            //  plusMinus(plus);
-            // staircase(6);
-            List<int>Value = new List<int>() { 426980153, 354802167, 142980735, 968217435, 734892650 };
-            miniMaxSum(Value);
+
+            /************************************************************
+             List<long> longSum = new List<long>() { 1000000001, 1000000002, 1000000003, 1000000004, 1000000005 };
+
+             long result = aVeryBigSum(longSum);
+             Console.WriteLine(result);*/
+
+
+            /***********************************************************
+             List<int> plus = new List<int>() {1,1,0,-1,-1 };
+             plusMinus(plus);*/
+
+
+            /*************************************************
+            staircase(6);*/
+
+
+            /**********************************************************************
+             List<int>Value = new List<int>() { 426980153, 354802167, 142980735, 968217435, 734892650 };
+             miniMaxSum(Value);*/
+            List<int> candles = new List<int>() { 3, 2, 1, 3 };
+            //Console.WriteLine(candles.Capacity);
+            int result=birthdayCakeCandles(candles);
+            Console.WriteLine(result);
         }
     }
 }
